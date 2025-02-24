@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkxay2yam4uvd"]
+
+[ext_resource type="Material" uid="uid://b8ihaqbe4423b" path="res://Characters/Ollie/Tex/Ollie_Accessories_Mat.tres" id="1_7wno0"]
+[ext_resource type="ArrayMesh" uid="uid://bvwarkxr88cb6" path="res://Characters/Ollie/Ollie_Accessories_Eyes_Hair.obj" id="2_kgf1j"]
+[ext_resource type="Material" uid="uid://dafhaayyx8kar" path="res://Characters/Ollie/Tex/Ollie_Clothes_Mat.tres" id="3_ex77w"]
+[ext_resource type="ArrayMesh" uid="uid://jmbgete3ij17" path="res://Characters/Ollie/Ollie_Clothes.obj" id="4_v6ppd"]
+[ext_resource type="Material" uid="uid://6xcsu23paf8e" path="res://Characters/Ollie/Tex/Ollie_Skin_Mat.tres" id="5_2w2rp"]
+[ext_resource type="ArrayMesh" uid="uid://bj40nttbwhf4p" path="res://Characters/Ollie/Ollie_Skin.obj" id="6_sesif"]
+
+[node name="Ollie" type="Node3D"]
+
+[node name="OllieAccessoriesEyesHair" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_7wno0")
+mesh = ExtResource("2_kgf1j")
+
+[node name="OllieClothes" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0)
+material_override = ExtResource("3_ex77w")
+mesh = ExtResource("4_v6ppd")
+
+[node name="OllieSkin" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0)
+material_override = ExtResource("5_2w2rp")
+mesh = ExtResource("6_sesif")
