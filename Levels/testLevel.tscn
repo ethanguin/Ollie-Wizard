@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs7u1d6r8awp2"]
+[gd_scene load_steps=8 format=3 uid="uid://bs7u1d6r8awp2"]
 
 [ext_resource type="Texture2D" uid="uid://df2aclgy7jscd" path="res://Levels/Tex/kloppenheim_06_puresky_4k.hdr" id="1_30dkk"]
+[ext_resource type="PackedScene" uid="uid://d0gu3411acvkb" path="res://Characters/PlayerCharacter.tscn" id="2_c2uam"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_827mb"]
 panorama = ExtResource("1_30dkk")
@@ -29,9 +30,8 @@ environment = SubResource("Environment_r4c2j")
 transform = Transform3D(-0.866025, -0.433013, 0.25, -0.178214, 0.734482, 0.654809, -0.467161, 0.522528, -0.713249, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85087, 0)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_cbla2")
 surface_material_override/0 = SubResource("StandardMaterial3D_ocw06")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_c2uam")]
