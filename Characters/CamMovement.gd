@@ -1,12 +1,12 @@
-extends CharacterBody3D
-
+extends Node3D
+##------------------CAMERA MOVEMENT CODE------------------##
 const ELLIPSEWIDTH = 2.5 # Amount to stretch the x-axis so we can move more horizontally
 const CAMSTOP = 10.0  # Max movement range
 const SPEED = 19.0  # Speed of camera movement
 const RETURN_SPEED = 7.0  # Speed the camera returns to center
 
 @export_group("Camera")
-@onready var _cam_transform: Node3D = %CamOrigin
+@onready var _cam_transform: Node3D = %CamTransform
 
 var vel := Vector2.ZERO  # Movement speed
 
@@ -28,3 +28,4 @@ func _physics_process(delta: float) -> void:
 	# Soft boundary using sin-based easing
 	_cam_transform.position.x = CAMSTOP * sin(new_x / (CAMSTOP * ELLIPSEWIDTH)) * ELLIPSEWIDTH
 	_cam_transform.position.z = CAMSTOP * sin(new_z / CAMSTOP)
+##------------------CAMERA MOVEMENT CODE------------------##
