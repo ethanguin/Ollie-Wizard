@@ -82,5 +82,6 @@ cam_right={
 
 [rendering]
 
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
+lights_and_shadows/directional_shadow/size=5000
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=5
 anti_aliasing/quality/msaa_3d=1

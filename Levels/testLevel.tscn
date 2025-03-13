@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs7u1d6r8awp2"]
+[gd_scene load_steps=10 format=3 uid="uid://bs7u1d6r8awp2"]
 
 [ext_resource type="Texture2D" uid="uid://df2aclgy7jscd" path="res://Levels/Tex/kloppenheim_06_puresky_4k.hdr" id="1_30dkk"]
-[ext_resource type="PackedScene" uid="uid://d0gu3411acvkb" path="res://Characters/PlayerCharacter.tscn" id="2_c2uam"]
+[ext_resource type="PackedScene" uid="uid://fwhdutf4ei3u" path="res://Characters/PlayerCharacter.tscn" id="2_c2uam"]
+[ext_resource type="Script" path="res://Characters/CamMovement.gd" id="2_p4o5p"]
+[ext_resource type="Script" path="res://Characters/PlayerMovement.gd" id="3_mvlyr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_827mb"]
 panorama = ExtResource("1_30dkk")
@@ -13,8 +15,15 @@ sky_material = SubResource("PanoramaSkyMaterial_827mb")
 background_mode = 2
 background_energy_multiplier = 0.4
 sky = SubResource("Sky_enhih")
+ambient_light_source = 3
 tonemap_mode = 2
+ssao_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
+glow_intensity = 0.72
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_density = 0.301
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cbla2"]
 size = Vector2(50, 50)
@@ -27,7 +36,7 @@ size = Vector2(50, 50)
 environment = SubResource("Environment_r4c2j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, -0.178214, 0.734482, 0.654809, -0.467161, 0.522528, -0.713249, 0, 0, 0)
+transform = Transform3D(0.727772, 0.38786, -0.565607, 0, 0.824719, 0.565543, 0.685818, -0.411587, 0.600208, 0, 0, 0)
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -35,3 +44,19 @@ mesh = SubResource("PlaneMesh_cbla2")
 surface_material_override/0 = SubResource("StandardMaterial3D_ocw06")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_c2uam")]
+script = ExtResource("3_mvlyr")
+
+[node name="CamOrigin2" type="Node3D" parent="PlayerCharacter"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, 3.85087, 0)
+script = ExtResource("2_p4o5p")
+
+[node name="CamTransform" type="Node3D" parent="PlayerCharacter/CamOrigin2"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, 3.85087, 0)
+top_level = true
+
+[node name="Camera3D" type="Camera3D" parent="PlayerCharacter/CamOrigin2/CamTransform"]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, 3.55271e-15, 1, -2.98023e-08, 8.74228e-08, -2.98023e-08, -1, 0, -1.07288e-06, -25)
+fov = 50.0
