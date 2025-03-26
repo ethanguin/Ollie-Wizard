@@ -1,9 +1,9 @@
 extends Node3D
 ##------------------CAMERA MOVEMENT CODE------------------##
 const ELLIPSEWIDTH = 2.5 # Amount to stretch the x-axis so we can move more horizontally
-const CAMSTOP = 10.0  # Max movement range
-const SPEED = 19.0  # Speed of camera movement
-const RETURN_SPEED = 7.0  # Speed the camera returns to center
+const CAMSTOP = 1  # Max movement range
+const SPEED = 4.0  # Speed of camera movement
+const RETURN_SPEED = 6.0  # Speed the camera returns to center
 
 @export_group("Camera")
 @onready var _cam_transform: Node3D = %CamTransform
@@ -11,7 +11,7 @@ const RETURN_SPEED = 7.0  # Speed the camera returns to center
 var vel := Vector2.ZERO  # Movement speed
 
 func _physics_process(delta: float) -> void:
-	var dirVector = Input.get_vector("cam_left", "cam_right", "cam_up", "cam_down")
+	var dirVector = Input.get_vector("cam_right", "cam_left", "cam_down", "cam_up")
 
 	if dirVector.length() > 0.01:
 		# Move with joystick input

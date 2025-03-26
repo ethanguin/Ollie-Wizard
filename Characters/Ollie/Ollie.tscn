@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bj40nttbwhf4p" path="res://Characters/Ollie/Ollie_Skin.obj" id="6_sesif"]
 
 [node name="Ollie" type="Node3D"]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 
 [node name="OllieAccessoriesEyesHair" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_7wno0")
