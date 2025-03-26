@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0gu3411acvkb"]
+[gd_scene load_steps=5 format=3 uid="uid://fwhdutf4ei3u"]
 
 [ext_resource type="PackedScene" uid="uid://dkxay2yam4uvd" path="res://Characters/Ollie/Ollie.tscn" id="1_0rxnv"]
 [ext_resource type="Script" path="res://Characters/PlayerMovement.gd" id="1_ob1rr"]

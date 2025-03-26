@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs7u1d6r8awp2"]
+[gd_scene load_steps=15 format=3 uid="uid://bs7u1d6r8awp2"]
 
 [ext_resource type="Texture2D" uid="uid://df2aclgy7jscd" path="res://Levels/Tex/kloppenheim_06_puresky_4k.hdr" id="1_30dkk"]
-[ext_resource type="PackedScene" uid="uid://d0gu3411acvkb" path="res://Characters/PlayerCharacter.tscn" id="2_c2uam"]
+[ext_resource type="PackedScene" uid="uid://fwhdutf4ei3u" path="res://Characters/PlayerCharacter.tscn" id="2_c2uam"]
+[ext_resource type="ArrayMesh" uid="uid://jmja16xuuw4m" path="res://Assets/Terrain/terrain21.obj" id="3_4nxxd"]
+[ext_resource type="ArrayMesh" uid="uid://2rdq0rtkqbui" path="res://Assets/Terrain/terrain11.obj" id="4_uvmj3"]
+[ext_resource type="ArrayMesh" uid="uid://hdyi22e3ns41" path="res://Assets/Environment/tree1.obj" id="5_uab74"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_827mb"]
 panorama = ExtResource("1_30dkk")
@@ -31,6 +34,19 @@ size = Vector3(10, 1, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5hm0a"]
 size = Vector3(10, 1, 10)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rp5t6"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_imc0t"]
+height = 2.59799
+radius = 0.542097
+
+[sub_resource type="MultiMesh" id="MultiMesh_3lt4o"]
+transform_format = 1
+instance_count = 25
+mesh = ExtResource("5_uab74")
+buffer = PackedFloat32Array(0.846858, -0.0250388, -0.501123, -0.491954, 0.0575858, 0.981464, 0.0482762, -0.00727063, 0.498432, -0.0708504, 0.845851, -6.12654, -0.976493, 0.0228875, -0.230633, 5.3276, 0.0120001, 1.00237, 0.048665, -0.043021, 0.231455, 0.0445919, -0.975548, -8.26388, -1.11954, 0.0199318, 0.227379, -0.418944, 0.0399743, 1.13774, 0.0970873, -0.133307, -0.224724, 0.103085, -1.1155, 0.879126, 0.473613, -0.113722, -0.937147, 4.66821, 0.084785, 1.04936, -0.0844908, -0.149894, 0.940207, -0.0373426, 0.479691, -6.97869, 0.415939, 0.0240624, -0.920647, 3.26271, -0.0817106, 1.00717, -0.0105924, 0.0426276, 0.917329, 0.0788024, 0.4165, -0.285163, 0.242046, 0.0399799, 0.969408, 6.13467, -0.0206026, 0.999105, -0.0360605, -0.00337225, -0.970013, -0.0112444, 0.242661, -2.9929, -0.925408, -0.08152, 0.399197, 0.874996, -0.0737694, 1.00783, 0.0347996, -0.0703599, -0.400701, 0.00272503, -0.928339, -1.86281, 0.726872, -0.0259854, -0.571744, 0.0697084, 0.0263291, 0.924739, -0.00855591, -0.039275, 0.571728, -0.0095492, 0.727286, -6.81693, -0.841332, -0.0441599, 0.701046, 6.712, -0.0415286, 1.09506, 0.0191407, -0.00998824, -0.701207, -0.0118701, -0.842272, -3.25632, -0.791863, -0.0239684, -0.643225, -0.056217, -0.066068, 1.0174, 0.0434238, -0.0552929, 0.640272, 0.07534, -0.791035, -3.47062, 0.708044, -0.0710528, 0.674842, 6.77566, 0.0168249, 0.976855, 0.0851985, 0.0116385, -0.678363, -0.0499335, 0.706482, -7.55032, -0.466863, -0.0495185, 0.759835, 7.69897, -0.0434549, 0.891565, 0.0314034, 0.0312786, -0.760206, -0.020553, -0.468431, -3.16299, -0.830603, -0.0542667, 0.256534, 0.620651, -0.0466281, 0.869138, 0.0328837, -0.0749493, -0.258032, 0.0176251, -0.831724, -1.45406, -0.558789, 0.0506096, 0.832323, 4.72819, 0.0457519, 1.00228, -0.0302277, -0.0823986, -0.832604, 0.0211097, -0.560261, -0.255376, 0.499756, 0.0526434, 0.725388, 4.35471, -0.00408202, 0.880323, -0.0610752, 0.047019, -0.727284, 0.0312332, 0.498796, -2.49644, -0.921665, 0.0146523, -0.620983, 3.28613, -0.0347794, 1.10817, 0.0777674, 0.0359045, 0.620181, 0.0839208, -0.918496, -0.224218, -0.126777, 0.00648229, -0.928663, 5.45974, -0.0954638, 0.93222, 0.0195394, -0.0972863, 0.923766, 0.0972271, -0.12543, -0.701213, 0.0590436, -0.00124198, 0.975181, 3.77126, -0.0661045, 0.974714, 0.00524378, -0.0891399, -0.972939, -0.0663005, 0.0588234, -4.97476, 0.345484, -0.0259739, 0.937011, 0.306601, -0.0313615, 0.997749, 0.0392208, -0.0871022, -0.936846, -0.0429788, 0.344232, -1.9261, 0.95119, -0.0309791, -0.255676, 3.7672, 0.048653, 0.982285, 0.0619846, -0.129172, 0.252909, -0.0724534, 0.949674, -5.64919, 0.865294, -0.0441341, -0.392311, 1.57749, 0.0446106, 0.950015, -0.00847977, -0.0151184, 0.392257, -0.0106863, 0.866377, -1.14019, -0.812767, 0.163418, 0.700486, 3.92246, 0.172884, 1.07036, -0.0491112, 0.0541181, -0.698209, 0.0748024, -0.827577, -1.23421, -0.373602, 0.00659813, 0.796105, 6.0174, 0.0133854, 0.879332, -0.00100629, 0.00123071, -0.79602, 0.0116896, -0.373659, -3.08818, -0.517374, 0.0219073, 0.777463, 3.04643, 0.0660855, 0.931624, 0.0177263, -0.0871998, -0.774959, 0.0648197, -0.517534, -8.43539, -0.94125, 0.0256942, -0.501451, 4.80112, 0.0779215, 1.05997, -0.0919502, 0.037419, 0.496026, -0.117756, -0.937101, 1.19626)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -42,6 +58,7 @@ shadow_enabled = true
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51, 0)
+visible = false
 mesh = SubResource("BoxMesh_q34qn")
 surface_material_override/0 = SubResource("StandardMaterial3D_ocw06")
 
@@ -51,3 +68,40 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ocw06")
 shape = SubResource("BoxShape3D_5hm0a")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_c2uam")]
+
+[node name="Terrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
+
+[node name="2,1" type="MeshInstance3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
+mesh = ExtResource("3_4nxxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/2,1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/2,1/StaticBody3D"]
+shape = SubResource("BoxShape3D_rp5t6")
+
+[node name="1,1" type="MeshInstance3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+mesh = ExtResource("4_uvmj3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/1,1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/1,1/StaticBody3D"]
+shape = SubResource("BoxShape3D_rp5t6")
+
+[node name="Forest" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64592, 0.0499992, 3.51124)
+
+[node name="Tree1" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03296, 0, -3.32084)
+mesh = ExtResource("5_uab74")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Tree1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest/Tree1/StaticBody3D"]
+shape = SubResource("CylinderShape3D_imc0t")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Forest"]
+multimesh = SubResource("MultiMesh_3lt4o")
