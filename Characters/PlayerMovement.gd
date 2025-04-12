@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 3
 const JUMP_VELOCITY = 4.5
 
 
 func _physics_process(delta: float) -> void:
+	get_parent().get_node("GrassScatter").get_material_override().set_shader_parameter("playerPos", global_transform.origin)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
