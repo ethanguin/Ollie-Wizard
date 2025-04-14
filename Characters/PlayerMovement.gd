@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 const SPEED = 3
 const JUMP_VELOCITY = 4.5
+var lastDir = Vector3.FORWARD
+const ROTATION_SPEED = 10
 
 
 func _physics_process(delta: float) -> void:
@@ -20,10 +22,13 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("move_right", "move_left", "move_back", "move_forward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		lastDir = direction
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	get_node("Ollie").rotation.y = lerp_angle(get_node("Ollie").rotation.y, atan2(lastDir.x, lastDir.z), delta*ROTATION_SPEED)
+	
 
 	move_and_slide()

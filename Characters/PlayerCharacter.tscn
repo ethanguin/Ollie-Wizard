@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://fwhdutf4ei3u"]
+[gd_scene load_steps=4 format=3 uid="uid://fwhdutf4ei3u"]
 
 [ext_resource type="PackedScene" uid="uid://dkxay2yam4uvd" path="res://Characters/Ollie/Ollie.tscn" id="1_0rxnv"]
 [ext_resource type="Script" uid="uid://drvayskqoo2ff" path="res://Characters/PlayerMovement.gd" id="1_ob1rr"]
-[ext_resource type="Script" uid="uid://bom5jtjdqvnan" path="res://Characters/CamMovement.gd" id="3_h4ep1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yd3f"]
 radius = 0.111984
@@ -16,14 +15,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.320686, 0)
 shape = SubResource("CapsuleShape3D_8yd3f")
 
 [node name="Ollie" parent="." instance=ExtResource("1_0rxnv")]
-
-[node name="CameraOrigin" type="Node3D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("3_h4ep1")
-
-[node name="CamTransform" type="Node3D" parent="CameraOrigin"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.463466, -0.886114, 0, 0.886114, 0.463466, 0, 0.5495, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CameraOrigin/CamTransform"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.5)
