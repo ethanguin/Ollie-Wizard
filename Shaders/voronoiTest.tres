@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dv4bvis6bxceg"]
+
+[ext_resource type="Shader" uid="uid://blx27rwn2x3ai" path="res://Shaders/Voronoi.gdshader" id="1_bt6l3"]
+
+[resource]
+shader = ExtResource("1_bt6l3")
